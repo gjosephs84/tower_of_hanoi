@@ -8,6 +8,8 @@
 
 <body>
   <button onclick="makeMove()" width="40"> Make Move</button>
+  <!-- I added the following input to be able to specify number of disks -->
+  <input type="text" id="numDisk" placeholder="Number of Disks">
   <div class='game' id="game">
   </div>
 
@@ -94,7 +96,8 @@
 
     function makeMove() {
       if (counter == 0) {
-        const nDisks = 5;
+        // Added the following line to make the input work
+        const nDisks = document.getElementById('numDisk').value;
         initialize(nDisks, pegMap);
         moveDisks(nDisks, "A", "C", "B");
         initializeDisks(pegHist[0]);
